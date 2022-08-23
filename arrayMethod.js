@@ -51,18 +51,25 @@ function createList(storeIntentory) {
 // For example: evenOdd([1,2,3,'a']) returns ['odd','even','odd','N/A'].
 
 
-function evenOdd(arrayOfNumbers){
-const array= arrayOfNumbers.map(value=>{
+function evenOdd(arrayOfNumbers){["odd","even",""]
+
+const array = arrayOfNumbers.map(value =>{
+
 switch(value%2){
-case 1:return "odd";
+case 1: return "odd";
 case 0: return "even"; 
 default:return "N/A"
 }
 })
+
 return array;
+
 }
 
 console.log(evenOdd([1,2,3,'a']))
+console.log(evenOdd(["a",444,555]))
+
+
 
 
 /******************************************************************************************************************** */
@@ -74,14 +81,17 @@ console.log(evenOdd([1,2,3,'a']))
 // For example, notInFirstArray([1,2,3,5], [1,2,3,4]) returns [4].
 
 function notInFirstArray(arr1,arr2){
-    const array =arr2.filter(element=> {
+    const array =arr2.filter(element => {
         return !(arr1.includes(element));
 
     })
     return array;
 }
 
-console.log(notInFirstArray([1,2,3,5], [1,2,3,4]))
+console.log(notInFirstArray([1,2,3,5], [1,2,3,4,6,10,99]))
+
+
+
 
 /*********************************************************************************************************************** */
 
@@ -92,8 +102,8 @@ console.log(notInFirstArray([1,2,3,5], [1,2,3,4]))
 function reversedString(str){
 
 const arr =str.reduce((previousValue,currentValue)=>{
-  
-    previousValue.shift(currentValue);
+  console.log(currentValue)
+    previousValue.unshift(currentValue);
 
     return previousValue;
 },[]);
@@ -103,3 +113,4 @@ return arr
 }
 
 console.log(reversedString(['w','a','a','d']))
+
